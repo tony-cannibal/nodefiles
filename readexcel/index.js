@@ -12,7 +12,6 @@ function readexcel(dir) {
         let data = []
 
         const temp = reader.utils.sheet_to_json(file.Sheets[file.SheetNames[i]])
-
         temp.forEach((res) => {
             data.push(res)
         })
@@ -25,9 +24,12 @@ function readexcel(dir) {
 let file = './test.xlsx'
 
 let test = readexcel(file)
-// Printing data
-console.log(test)
 
+for (i in test["Sheet1"]) {
+    console.log(Object.values(test["Sheet1"][i]))
+}
+// Printing data
+// console.log(test)
 
 // let length = Object.keys(excelSheets["Sheet1"]).length
 //
